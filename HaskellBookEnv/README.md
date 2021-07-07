@@ -18,3 +18,4 @@
           *  i)  stack ghci  
           *  ii) Wait for prompt, input Ch21 or whatever is the executable name
     *  e)  Option 3: If there has a new project with app folder, go to the project and do stack run
+6. Note that the app folder has been deleted. Used only if relied upon for running an app. Correspondingly, HaskellBookEnv-exe: section under Executables in package.yaml is deleted as there is no more app directory.
