@@ -1,3 +1,4 @@
+
 {-# LANGUAGE OverloadedStrings #-}
 
 --import Control.Applicative
@@ -43,6 +44,9 @@ testVirtuous = do
   print $ virtuousFraction' shouldWork
   print $ virtuousFraction' shouldAlsoWork
 
+-- decimal :: TokenParsing m => m Integer
+-- decimal is a parsing function like char or string, specialized
+-- for decimal numbers
 ---
 
 parseIntegerAtEnd :: Parser Integer
@@ -50,6 +54,3 @@ parseIntegerAtEnd = do
   i <- integer
   _ <- eof
   return i
-
--- >>> parseIntegerAtEnd
-
