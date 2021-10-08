@@ -1,0 +1,87 @@
+name:                HaskellBookEnv
+version:             0.1.0.0
+github:              "githubuser/HaskellBookEnv"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2020 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/HaskellBookEnv#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- simple-reflect
+- QuickCheck
+- checkers
+- hspec
+- wreq
+- containers
+- transformers
+- bytestring
+
+ghc-options:
+- -Wall
+
+library:
+  source-dirs: src
+
+executables: #(need to uncomment this line when running with Ch21, Ch2test)
+  HaskellBookEnv-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+
+    dependencies:
+    - HaskellBookEnv
+    when:
+      - condition: false
+        other-modules: Paths_HaskellBookEnv  # your package name here
+​
+
+
+  # Ch21:
+  #   main:                Main.hs
+  #   source-dirs:         Chapter21
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+
+  #   dependencies:
+  #   - HaskellBookEnv
+
+  # Ch2test:
+  #   main:                Main.hs
+  #   source-dirs:         Chapter21
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+
+  #   dependencies:
+  #   - HaskellBookEnv
+
+tests:
+  HaskellBookEnv-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - HaskellBookEnv
